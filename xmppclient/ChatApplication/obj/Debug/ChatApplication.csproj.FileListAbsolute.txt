@@ -1,0 +1,14 @@
+C:\Users\sindh\ACS560\Homework_03\ChatApplication\ChatApplication\bin\Debug\ChatApplication.exe.config
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication\ChatApplication\bin\Debug\ChatApplication.exe.config
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication\ChatApplication\bin\Debug\ChatApplication.exe
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication\ChatApplication\bin\Debug\ChatApplication.pdb
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication\ChatApplication\obj\Debug\ChatApplication.csprojResolveAssemblyReference.cache
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication\ChatApplication\obj\Debug\ChatApplication.Form1.resources
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication\ChatApplication\obj\Debug\ChatApplication.Properties.Resources.resources
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication\ChatApplication\obj\Debug\ChatApplication.csproj.GenerateResource.Cache
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication\ChatApplication\obj\Debug\ChatApplication.exe
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication\ChatApplication\obj\Debug\ChatApplication.pdb
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication\ChatApplication\bin\Debug\MetroFramework.dll
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication\ChatApplication\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication\ChatApplication\bin\Debug\S22.Xmpp.dll
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication\ChatApplication\bin\Debug\S22.Xmpp.xml
