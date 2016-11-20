@@ -60,6 +60,7 @@ func main() {
 	var am = accountmanager.GetAccountManager()
 	am.CreateAccount("atreidesp", "hulud1")
 	am.CreateAccount("kingw", "1234")
+  am.CreateAccount("sindhu", "1234")
 
 	var cert, _ = tls.LoadX509KeyPair("./cert.pem", "./key.pem")
 	var tlsConfig = tls.Config{
@@ -82,6 +83,7 @@ func main() {
 			&xmpp.NormalMessageExtension{MessageBus: messagebus},
 			&xmpp.RosterExtension{Accounts: am},
 			&xmpp.PresenceExtension{Accounts: am, MessageBus: messagebus},
+      &xmpp.SessionExtension{Accounts: am, MessageBus: messagebus},
 		},
 		DisconnectBus: disconnectbus,
 		Domain:        "example.com",
