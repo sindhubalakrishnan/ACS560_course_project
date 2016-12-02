@@ -83,7 +83,7 @@ func main() {
 			&xmpp.NormalMessageExtension{MessageBus: messagebus},
 			&xmpp.RosterExtension{Accounts: am},
 			&xmpp.PresenceExtension{Accounts: am, MessageBus: messagebus},
-      &xmpp.SessionExtension{Accounts: am, MessageBus: messagebus},
+      &xmpp.SessionExtension{Accounts: am, MessageBus: messagebus, Log: l},
 		},
 		DisconnectBus: disconnectbus,
 		Domain:        "example.com",
