@@ -1,15 +1,15 @@
 package main
 
 import (
-	"xmppserver/accountmanager"
-	"xmppserver/connectionmanager"
+	"github.com/xweskingx/ACS560_course_project/xmppserver/accountmanager"
+	"github.com/xweskingx/ACS560_course_project/xmppserver/connectionmanager"
 
 	"crypto/tls"
 	"flag"
 	"fmt"
 	"net"
 	"os"
-	"xmppserver/xmpp"
+	"github.com/xweskingx/ACS560_course_project/xmppserver/xmpp"
 )
 
 /* Inject logging into xmpp library */

@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"os"
 	"sync"
-	"xmppserver/dataaccess"
-	"xmppserver/logger"
+	"github.com/xweskingx/ACS560_course_project/xmppserver/dataaccess"
+	"github.com/xweskingx/ACS560_course_project/xmppserver/logger"
 )
 
 type AccountManager struct {

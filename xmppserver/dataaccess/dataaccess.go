@@ -6,8 +6,8 @@ import (
 	"os"
 	"strconv"
 	"sync"
-	"xmppserver/logger"
-	"xmppserver/user"
+	"github.com/xweskingx/ACS560_course_project/xmppserver/logger"
+	"github.com/xweskingx/ACS560_course_project/xmppserver/user"
 
 	_ "github.com/mattn/go-sqlite3"
 )

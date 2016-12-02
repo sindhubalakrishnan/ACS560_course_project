@@ -5,10 +5,9 @@ import (
 	"os"
 	"strconv"
 	"sync"
-	"xmppserver/accountmanager"
-	"xmppserver/logger"
-
-	"xmppserver/xmpp"
+	"github.com/xweskingx/ACS560_course_project/xmppserver/accountmanager"
+	"github.com/xweskingx/ACS560_course_project/xmppserver/logger"
+	"github.com/xweskingx/ACS560_course_project/xmppserver/xmpp"
 )
 
 var manager *ConnectionManager
