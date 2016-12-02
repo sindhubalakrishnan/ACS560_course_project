@@ -20,6 +20,24 @@ type DataAccess struct {
 	log    logger.Logger
 }
 
+func (dataaccess DataAccess) InitDB() (bool) {
+  dataaccess.log.Debug("Initializing Database")
+  db, success := dataaccess.connect()
+  defer db.Close()
+  if success {
+    stmt, err := db.Prepare("CREATE TABLE IF NOT EXISTS'user' ( 'id' INTEGER PRIMARY KEY AUTOINCREMENT, 'login' VARCHAR(64) UNIQUE, 'password' VARCHAR(64),  'first_name' VARCHAR(64) NULL, 'last_name' VARCHAR(64) NULL, 'created_at' DATETIME DEFAULT CURRENT_TIMESTAMP );");
+    defer stmt.Close()
+	  if !dataaccess.checkErr("Error preparing statement", err) {
+		 	 _, err := stmt.Exec()
+			 if !dataaccess.checkErr("Error executing statment", err) {
+				 dataaccess.log.Debug("Initialized users table")
+			   return true
+			 }
+		 }
+   }
+   return false
+}
+
 func (dataaccess DataAccess) connect() (*sql.DB, bool) {
 	dataaccess.log.Debug("Connecting to database")
 	db, err := sql.Open("sqlite3", dataaccess.dbname)
@@ -116,6 +134,7 @@ func GetDataAccess() *DataAccess {
 	once.Do(func() {
 		dataaccess = &DataAccess{dbname: "developer.db", log: newlog}
 		dataaccess.log.Init(os.Stdout)
+    dataaccess.InitDB()
 	})
 	return dataaccess
 }
