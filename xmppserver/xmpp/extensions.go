@@ -92,7 +92,7 @@ func (e *SessionExtension) Process(message interface{}, from *Client) {
   parsed, ok := message.(*ClientIQ)
   var msg = ""
 
-  if ok && string(parsed.Query) == "<session xmlns='urn:ietf:params:xml::ns:xmpp-session'/>" {
+  if ok && string(parsed.Query) == "<session xmlns='urn:ietf:params:xml:ns:xmpp-session'/>" {
     msg = "<iq id='" + parsed.ID + "' from='" + parsed.To + "' type='result'/>"
   }
   e.Log.Debug(fmt.Sprintf("Established Session for %s", from.jid))
