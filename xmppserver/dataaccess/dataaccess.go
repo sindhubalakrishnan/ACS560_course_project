@@ -3,11 +3,11 @@ package dataaccess
 import (
 	"database/sql"
 	"fmt"
+	"github.com/xweskingx/ACS560_course_project/xmppserver/logger"
+	"github.com/xweskingx/ACS560_course_project/xmppserver/user"
 	"os"
 	"strconv"
 	"sync"
-	"github.com/xweskingx/ACS560_course_project/xmppserver/logger"
-	"github.com/xweskingx/ACS560_course_project/xmppserver/user"
 
 	_ "github.com/mattn/go-sqlite3"
 )
@@ -20,28 +20,58 @@ type DataAccess struct {
 	log    logger.Logger
 }
 
-func (dataaccess DataAccess) InitDB() (bool) {
-  dataaccess.log.Debug("Initializing Database")
-  db, success := dataaccess.connect()
-  defer db.Close()
-  if success {
-    stmt, err := db.Prepare("CREATE TABLE IF NOT EXISTS'user' ( 'id' INTEGER PRIMARY KEY AUTOINCREMENT, 'login' VARCHAR(64) UNIQUE, 'password' VARCHAR(64),  'first_name' VARCHAR(64) NULL, 'last_name' VARCHAR(64) NULL, 'created_at' DATETIME DEFAULT CURRENT_TIMESTAMP );");
-    defer stmt.Close()
-	  if !dataaccess.checkErr("Error preparing statement", err) {
-		 	 _, err := stmt.Exec()
-			 if !dataaccess.checkErr("Error executing statment", err) {
-				 dataaccess.log.Debug("Initialized users table")
-			   return true
-			 }
-		 }
-   }
-   return false
+func (dataaccess DataAccess) InitDB() bool {
+	dataaccess.log.Debug("Initializing Database")
+	db, success := dataaccess.connect()
+	defer db.Close()
+	if success {
+		stmt, err := db.Prepare("CREATE TABLE IF NOT EXISTS'user' ( 'id' INTEGER PRIMARY KEY AUTOINCREMENT, 'login' VARCHAR(64) UNIQUE, 'password' VARCHAR(64),  'first_name' VARCHAR(64) NULL, 'last_name' VARCHAR(64) NULL, 'created_at' DATETIME DEFAULT CURRENT_TIMESTAMP );")
+		defer stmt.Close()
+		if !dataaccess.checkErr("Error preparing statement", err) {
+			_, err := stmt.Exec()
+			if !dataaccess.checkErr("Error executing statment", err) {
+				dataaccess.log.Debug("Initialized users table")
+				return true
+			}
+		}
+	}
+	return false
 }
 
 func (dataaccess DataAccess) connect() (*sql.DB, bool) {
 	dataaccess.log.Debug("Connecting to database")
 	db, err := sql.Open("sqlite3", dataaccess.dbname)
 	return db, !dataaccess.checkErr("Error connecting to database", err)
+}
+
+func (dataaccess DataAccess) GetAllUsers() ([]*user.User, bool) {
+	db, success := dataaccess.connect()
+	defer db.Close()
+	if success {
+		dataaccess.log.Debug("Gathering all users from database")
+		rows, err := db.Query("SELECT login, first_name, last_name, password from user;")
+		defer rows.Close()
+		if !dataaccess.checkErr("Error looking up all users", err) {
+			var users []*user.User
+      var u *user.User
+      var p user.Presence
+			for rows.Next() {
+				var login, fname, lname, pass string
+
+				err = rows.Scan(&login, &fname, &lname, &pass)
+        p = user.InitPresence("", "Unavailable")
+        u = user.Init(fname, lname, login, pass, "", -1, p)
+				users = append(users, u)
+				if dataaccess.checkErr("Error scanning row", err) {
+					return nil, false
+				}
+			}
+			return users, true
+		}
+		return nil, true
+	}
+	return nil, false
+
 }
 
 func (dataaccess DataAccess) LookupUserByLogin(login string) (*user.User, bool) {
@@ -55,7 +85,8 @@ func (dataaccess DataAccess) LookupUserByLogin(login string) (*user.User, bool) 
 			for rows.Next() {
 				var fname, lname, pass string
 				err = rows.Scan(&fname, &lname, &pass)
-				u := user.Init(fname, lname, login, pass, "", -1)
+        p := user.InitPresence("", "")
+				u := user.Init(fname, lname, login, pass, "", -1, p)
 				if dataaccess.checkErr("Error scanning row", err) {
 					return nil, false
 				}
@@ -134,7 +165,7 @@ func GetDataAccess() *DataAccess {
 	once.Do(func() {
 		dataaccess = &DataAccess{dbname: "developer.db", log: newlog}
 		dataaccess.log.Init(os.Stdout)
-    dataaccess.InitDB()
+		dataaccess.InitDB()
 	})
 	return dataaccess
 }
