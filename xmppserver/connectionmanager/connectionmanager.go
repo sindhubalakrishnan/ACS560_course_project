@@ -7,6 +7,7 @@ import (
 	"sync"
   "strings"
 	"github.com/xweskingx/ACS560_course_project/xmppserver/accountmanager"
+	"github.com/xweskingx/ACS560_course_project/xmppserver/conversationmanager"
 	"github.com/xweskingx/ACS560_course_project/xmppserver/logger"
 	"github.com/xweskingx/ACS560_course_project/xmppserver/xmpp"
 )
@@ -40,11 +41,12 @@ func (manager ConnectionManager) setConnection(jid string, conn chan<- interface
 func (manager ConnectionManager) RouteRoutine(bus <-chan xmpp.Message) {
 	var channel chan<- interface{}
 	var ok bool
-
+  cm := conversationmanager.GetConversationManager()
 	for {
 		message := <-bus
 		manager.lock.Lock()
-
+    parsed,_  := message.Data.(*xmpp.ClientMessage)
+    cm.AddMessageToSUC(parsed.Body, parsed.From, message.To)
 		if channel, ok = manager.Connections[message.To]; ok {
 			channel <- message.Data
 		}

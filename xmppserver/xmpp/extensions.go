@@ -31,7 +31,7 @@ type NormalMessageExtension struct {
 func (e *NormalMessageExtension) Process(message interface{}, from *Client) {
 	parsed, ok := message.(*ClientMessage)
 	if ok {
-		e.MessageBus <- Message{To: parsed.To, Data: message}
+    e.MessageBus <- Message{To: parsed.To, Data: message}
 	}
 }
 

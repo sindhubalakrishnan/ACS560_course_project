@@ -32,6 +32,15 @@ func Init(fname string, lname string, login string, pass string, created_at stri
 	return &User{fname: fname, lname: lname, login: login, pass: pass, created_at: created_at, id: id, presence: p}
 }
 
+func (u *User) GetID() int {
+  return u.id
+}
+
+func (u *User) SetID(id int) {
+  u.id = id
+}
+
+
 func (u *User) GetPresence() Presence {
 	return u.presence
 }

@@ -127,7 +127,7 @@ func (man AccountManager) Authenticate(username, password string) (success bool,
 	return
 }
 
-func (man AccountManager) CreateAccount(fname, lname, username, password string) (success bool, err error) {
+func (man AccountManager) CreateAccount(username, password, fname, lname string) (success bool, err error) {
 	manager.lock.Lock()
 	defer manager.lock.Unlock()
 	_, success = manager.da.CreateUser(fname, lname, username, password)
