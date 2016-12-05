@@ -187,7 +187,8 @@ namespace ChatApplication
             //string username = "sindhu";
             //string password = "1234";
 
-            string hostname = "desktop-gm279k1";
+            string hostname = username.Split('@')[1];
+            username = username.Split('@')[0];
             //string username = "admin";
             //string password = "admin";
             int port = 5222; bool tls = true;
@@ -225,7 +226,7 @@ namespace ChatApplication
             }
 
             this.Show();
-            lblUsername.Text = im.Jid.Node.ToString();
+            lblUsername.Text = GetBareJid(im.Jid);
 
             BindRoster();
         }
@@ -239,6 +240,9 @@ namespace ChatApplication
 
             foreach (var item in xmpproster.rosteritems)
             {
+                if (GetBareJid(item.Jid).Equals(im.Username)) {
+                    continue;
+                }
                 Button button = new Button();
                 panel4.Controls.Add(button);
                 button.Top = location_ptr * 50;
@@ -247,8 +251,8 @@ namespace ChatApplication
                 button.TextAlign = ContentAlignment.MiddleCenter;
                 button.Size = new Size(220, 50);
                 button.Margin = new Padding(0,0,0,0);
-                button.Text = item.Name;
-                button.Name = item.Jid.ToString();
+                button.Text = GetBareJid(item.Jid);
+                button.Name = GetBareJid(item.Jid);
                 button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(236)))), ((int)(((byte)(252)))));
                 button.Click += new System.EventHandler(Button_Click);
                 button.ContextMenuStrip = contextMenuStrip;
@@ -333,7 +337,7 @@ namespace ChatApplication
 
             AssertValid();
             im.SendMessage(sentto, message);
-            string sentby = im.Jid.Node.ToString();
+            string sentby = GetBareJid(im.Jid);
 
             UpdateConversationHistory(message, sentby, sentto);
             sendMsgtbx.Text = string.Empty;
@@ -358,9 +362,9 @@ namespace ChatApplication
         private void OnNewMessage(object sender, MessageEventArgs e)
         {
             string msg = e.Message.Body;
-            string sentby = e.Message.From.Node;
-            string sentto = e.Message.To.Node;
-            sentbyJID = e.Message.From.ToString().Split('/')[0];
+            string sentby = GetBareJid(e.Message.From);
+            string sentto = GetBareJid(e.Message.To);
+            sentbyJID = GetBareJid(e.Message.From);
 
             //sendMsgtbx.Enabled = true;
             startConversation(sentby);
@@ -489,6 +493,10 @@ namespace ChatApplication
                 throw new InvalidOperationException("Not connected to XMPP server.");
             if (!Authenticated)
                 throw new InvalidOperationException("Not authenticated with XMPP server.");
+        }
+
+        private string GetBareJid(Jid jid) {
+            return jid.ToString().Split('@')[0];
         }
     }
 }

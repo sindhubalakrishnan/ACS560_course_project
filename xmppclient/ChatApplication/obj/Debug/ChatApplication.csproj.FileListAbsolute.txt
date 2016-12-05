@@ -59,3 +59,37 @@ C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplicat
 C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication_Bkp_4thdec_latest\ChatApplication\obj\Debug\ChatApplication.exe
 C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication_Bkp_4thdec_latest\ChatApplication\obj\Debug\ChatApplication.pdb
 C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication_Bkp_4thdec_latest\ChatApplication\obj\Debug\ChatApplication.csprojResolveAssemblyReference.cache
+C:\Users\Wesley\workspace\ACS560_course_project\xmppclient\ChatApplication\bin\Debug\ChatApplication.exe.config
+C:\Users\Wesley\workspace\ACS560_course_project\xmppclient\ChatApplication\obj\Debug\ChatApplication.exe
+C:\Users\Wesley\workspace\ACS560_course_project\xmppclient\ChatApplication\obj\Debug\ChatApplication.pdb
+C:\Users\Wesley\workspace\ACS560_course_project\xmppclient\ChatApplication\bin\Debug\ChatApplication.exe
+C:\Users\Wesley\workspace\ACS560_course_project\xmppclient\ChatApplication\bin\Debug\ChatApplication.pdb
+C:\Users\Wesley\workspace\ACS560_course_project\xmppclient\ChatApplication\bin\Debug\MetroFramework.dll
+C:\Users\Wesley\workspace\ACS560_course_project\xmppclient\ChatApplication\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\Wesley\workspace\ACS560_course_project\xmppclient\ChatApplication\bin\Debug\S22.Xmpp.dll
+C:\Users\Wesley\workspace\ACS560_course_project\xmppclient\ChatApplication\bin\Debug\S22.Xmpp.xml
+C:\Users\Wesley\workspace\ACS560_course_project\xmppclient\ChatApplication\obj\Debug\ChatApplication.csprojResolveAssemblyReference.cache
+C:\Users\Wesley\workspace\ACS560_course_project\xmppclient\ChatApplication\obj\Debug\ChatApplication.Login.resources
+C:\Users\Wesley\workspace\ACS560_course_project\xmppclient\ChatApplication\obj\Debug\ChatApplication.Properties.Resources.resources
+C:\Users\Wesley\workspace\ACS560_course_project\xmppclient\ChatApplication\obj\Debug\ChatApplication.XMPPConnection.resources
+C:\Users\Wesley\workspace\ACS560_course_project\xmppclient\ChatApplication\obj\Debug\ChatApplication.csproj.GenerateResource.Cache
+C:\Users\sindh\Documents\Sindhu\wes\ACS560_course_project\xmppclient\ChatApplication\bin\Debug\ChatApplication.exe.config
+C:\Users\sindh\Documents\Sindhu\wes\ACS560_course_project\xmppclient\ChatApplication\obj\Debug\ChatApplication.exe
+C:\Users\sindh\Documents\Sindhu\wes\ACS560_course_project\xmppclient\ChatApplication\obj\Debug\ChatApplication.pdb
+C:\Users\sindh\Documents\Sindhu\wes\ACS560_course_project\xmppclient\ChatApplication\bin\Debug\ChatApplication.exe
+C:\Users\sindh\Documents\Sindhu\wes\ACS560_course_project\xmppclient\ChatApplication\bin\Debug\ChatApplication.pdb
+C:\Users\sindh\Documents\Sindhu\wes\ACS560_course_project\xmppclient\ChatApplication\bin\Debug\MetroFramework.dll
+C:\Users\sindh\Documents\Sindhu\wes\ACS560_course_project\xmppclient\ChatApplication\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\sindh\Documents\Sindhu\wes\ACS560_course_project\xmppclient\ChatApplication\bin\Debug\S22.Xmpp.dll
+C:\Users\sindh\Documents\Sindhu\wes\ACS560_course_project\xmppclient\ChatApplication\bin\Debug\S22.Xmpp.xml
+C:\Users\sindh\Documents\Sindhu\wes\ACS560_course_project\xmppclient\ChatApplication\obj\Debug\ChatApplication.csprojResolveAssemblyReference.cache
+C:\Users\sindh\Documents\Sindhu\wes\ACS560_course_project\xmppclient\ChatApplication\obj\Debug\ChatApplication.Login.resources
+C:\Users\sindh\Documents\Sindhu\wes\ACS560_course_project\xmppclient\ChatApplication\obj\Debug\ChatApplication.Properties.Resources.resources
+C:\Users\sindh\Documents\Sindhu\wes\ACS560_course_project\xmppclient\ChatApplication\obj\Debug\ChatApplication.XMPPConnection.resources
+C:\Users\sindh\Documents\Sindhu\wes\ACS560_course_project\xmppclient\ChatApplication\obj\Debug\ChatApplication.csproj.GenerateResource.Cache
+C:\Users\sindh\Documents\Sindhu\github.com\xweskingx\ACS560_course_project\xmppclient\ChatApplication\bin\Debug\ChatApplication.exe.config
+C:\Users\sindh\Documents\Sindhu\github.com\xweskingx\ACS560_course_project\xmppclient\ChatApplication\obj\Debug\ChatApplication.exe
+C:\Users\sindh\Documents\Sindhu\github.com\xweskingx\ACS560_course_project\xmppclient\ChatApplication\obj\Debug\ChatApplication.pdb
+C:\Users\sindh\Documents\Sindhu\Software Engineering\GITHub\ACS560_course_project\xmppclient\ChatApplication\bin\Debug\ChatApplication.exe.config
+C:\Users\sindh\Documents\Sindhu\Software Engineering\GITHub\ACS560_course_project\xmppclient\ChatApplication\obj\Debug\ChatApplication.exe
+C:\Users\sindh\Documents\Sindhu\Software Engineering\GITHub\ACS560_course_project\xmppclient\ChatApplication\obj\Debug\ChatApplication.pdb
