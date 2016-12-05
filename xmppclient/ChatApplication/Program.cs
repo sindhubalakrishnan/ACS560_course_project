@@ -17,7 +17,7 @@ namespace ChatApplication
         [STAThread]
         static void Main(string[] args)
         {
-            Application.Run(new Form1());
+            Application.Run(new Login());
         }
     }
 }
