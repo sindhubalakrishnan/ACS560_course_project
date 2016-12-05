@@ -113,13 +113,6 @@ namespace ChatApplication
             }
         }
 
-        public bool IsEncrypted
-        {
-            get
-            {
-                return im.IsEncrypted;
-            }
-        }
 
         public RemoteCertificateValidationCallback Validate
         {
@@ -132,12 +125,6 @@ namespace ChatApplication
             {
                 im.Validate = value;
             }
-        }
-
-        private Boolean IsXmppSuccess
-        {
-            get;
-            set;
         }
 
         public string Hostname
@@ -169,7 +156,6 @@ namespace ChatApplication
         {
             this.WindowState = FormWindowState.Maximized;
             InitializeComponent();
-            //this.Load += new EventHandler(XMPPConnection_Load);
         }
 
         private void XMPPConnection_Load(object sender, EventArgs e)
@@ -182,15 +168,9 @@ namespace ChatApplication
 
         public void XMPPConnect(string username,  string password)
         {
-            //this.Show();
-            //string hostname = "jacurutu.net";
-            //string username = "sindhu";
-            //string password = "1234";
-
             string hostname = username.Split('@')[1];
             username = username.Split('@')[0];
-            //string username = "admin";
-            //string password = "admin";
+
             int port = 5222; bool tls = true;
             RemoteCertificateValidationCallback validate = null;
 
@@ -258,7 +238,6 @@ namespace ChatApplication
                 button.ContextMenuStrip = contextMenuStrip;
                 location_ptr = location_ptr + 1;
             }
-            //sendMsgtbx.Enabled = false;
         }
 
         private void refreshContactsbtn_Click(object sender, EventArgs e)
@@ -315,8 +294,6 @@ namespace ChatApplication
         {
             if (e.KeyCode == Keys.Enter)
             {
-                //  startConversation(receipientName);
-                // string sentto = sendTo;
                 if (sendTo == null)
                 {
                     sendTo = sentbyJID;
@@ -345,15 +322,11 @@ namespace ChatApplication
 
         private void sndMsgbtn_Click(object sender, EventArgs e)
         {
-            //Jid sendTo = "test@desktop-gm279k1";
-            //Jid sendTo = "kingw";'
-
             if(sendTo == null)
             {
                 sendTo = sentbyJID;
             }
             Jid tojid = new Jid(sendTo);
-            //string sentto = tojid.Node.ToString();
 
             sendMessage(sendTo);
         }
@@ -366,7 +339,6 @@ namespace ChatApplication
             string sentto = GetBareJid(e.Message.To);
             sentbyJID = GetBareJid(e.Message.From);
 
-            //sendMsgtbx.Enabled = true;
             startConversation(sentby);
             UpdateConversationHistory(msg, sentby, sentto);
         }
@@ -407,27 +379,18 @@ namespace ChatApplication
 
         private void AddContactbtn_Click(object sender, EventArgs e)
         {
-            // Roster.AddContact(jid, name, groups);
-            //Roster.RemoveContact();
             ClearControls();
         }
 
         private void Searchbtn_Click(object sender, EventArgs e)
         {
             SearchContact(Searchtxb.Text);
-            //Searchtxb.ThrowIfNull("Search keyword is empty");
-            //foreach (var user in im.GetRoster().ToString())
-            //{
-            //    if (user.Contains(Searchtxb.Text))
-            //        Nicknametxb = user.Name;
-            //}
         }
 
         private void ClearControls()
         {
             Searchtxb.Text = string.Empty;
-            //Groupscombobox.Items.Clear();
-            //Groupscombobox.SelectedText = "";
+            Groupscombobox.Items.Clear();
         }
 
         private void SearchContact(string s_contact)
