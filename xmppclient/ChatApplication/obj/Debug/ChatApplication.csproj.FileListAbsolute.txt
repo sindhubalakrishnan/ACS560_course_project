@@ -1,18 +1,5 @@
 C:\Users\sindh\ACS560\Homework_03\ChatApplication\ChatApplication\bin\Debug\ChatApplication.exe.config
-C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication\ChatApplication\bin\Debug\ChatApplication.exe.config
 C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication\ChatApplication\bin\Debug\ChatApplication.exe
-C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication\ChatApplication\bin\Debug\ChatApplication.pdb
-C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication\ChatApplication\obj\Debug\ChatApplication.Properties.Resources.resources
-C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication\ChatApplication\obj\Debug\ChatApplication.csproj.GenerateResource.Cache
-C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication\ChatApplication\obj\Debug\ChatApplication.exe
-C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication\ChatApplication\obj\Debug\ChatApplication.pdb
-C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication\ChatApplication\bin\Debug\MetroFramework.dll
-C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication\ChatApplication\bin\Debug\MetroFramework.Fonts.dll
-C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication\ChatApplication\bin\Debug\S22.Xmpp.dll
-C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication\ChatApplication\bin\Debug\S22.Xmpp.xml
-C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication\ChatApplication\obj\Debug\ChatApplication.XMPPConnection.resources
-C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication\ChatApplication\obj\Debug\ChatApplication.Login.resources
-C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication\ChatApplication\obj\Debug\ChatApplication.Roster.resources
 C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\Backup\ChatApplication_Bkp_Dec1_BeforeUI_Change\ChatApplication\bin\Debug\ChatApplication.exe.config
 C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\Backup\ChatApplication_Bkp_Dec1_BeforeUI_Change\ChatApplication\obj\Debug\ChatApplication.exe
 C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\Backup\ChatApplication_Bkp_Dec1_BeforeUI_Change\ChatApplication\obj\Debug\ChatApplication.pdb
@@ -31,3 +18,58 @@ C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplicat
 C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication_Bkp\ChatApplication\bin\Debug\MetroFramework.Fonts.dll
 C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication_Bkp\ChatApplication\bin\Debug\S22.Xmpp.dll
 C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication_Bkp\ChatApplication\bin\Debug\S22.Xmpp.xml
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication_Bkp_4thdec_Current\ChatApplication\bin\Debug\ChatApplication.exe.config
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication_Bkp_4thdec_Current\ChatApplication\obj\Debug\ChatApplication.exe
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication_Bkp_4thdec_Current\ChatApplication\obj\Debug\ChatApplication.pdb
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication_Bkp_4thdec_Current\ChatApplication\obj\Debug\ChatApplication.csprojResolveAssemblyReference.cache
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication_Bkp_4thdec_Current\ChatApplication\obj\Debug\ChatApplication.Login.resources
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication_Bkp_4thdec_Current\ChatApplication\obj\Debug\ChatApplication.Properties.Resources.resources
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication_Bkp_4thdec_Current\ChatApplication\obj\Debug\ChatApplication.XMPPConnection.resources
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication_Bkp_4thdec_Current\ChatApplication\obj\Debug\ChatApplication.csproj.GenerateResource.Cache
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication_Bkp_4thdec_Current\ChatApplication\bin\Debug\ChatApplication.exe
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication_Bkp_4thdec_Current\ChatApplication\bin\Debug\ChatApplication.pdb
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication_Bkp_4thdec_Current\ChatApplication\bin\Debug\MetroFramework.dll
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication_Bkp_4thdec_Current\ChatApplication\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication_Bkp_4thdec_Current\ChatApplication\bin\Debug\S22.Xmpp.dll
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication_Bkp_4thdec_Current\ChatApplication\bin\Debug\S22.Xmpp.xml
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication\ChatApplication\bin\Debug\ChatApplication.exe.config
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication\ChatApplication\bin\Debug\MetroFramework.dll
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication\ChatApplication\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication\ChatApplication\bin\Debug\S22.Xmpp.dll
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication\ChatApplication\bin\Debug\S22.Xmpp.xml
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication\ChatApplication\obj\Debug\ChatApplication.Login.resources
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication\ChatApplication\obj\Debug\ChatApplication.Properties.Resources.resources
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication\ChatApplication\obj\Debug\ChatApplication.XMPPConnection.resources
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication\ChatApplication\obj\Debug\ChatApplication.csproj.GenerateResource.Cache
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication\ChatApplication\obj\Debug\ChatApplication.exe
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication\ChatApplication\obj\Debug\ChatApplication.pdb
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication\ChatApplication\obj\Debug\ChatApplication.csprojResolveAssemblyReference.cache
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication\ChatApplication\bin\Debug\ChatApplication.pdb
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication_Bkp_4thdec_latest\ChatApplication\bin\Debug\ChatApplication.exe.config
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication_Bkp_4thdec_latest\ChatApplication\bin\Debug\ChatApplication.exe
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication_Bkp_4thdec_latest\ChatApplication\bin\Debug\ChatApplication.pdb
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication_Bkp_4thdec_latest\ChatApplication\bin\Debug\MetroFramework.dll
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication_Bkp_4thdec_latest\ChatApplication\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication_Bkp_4thdec_latest\ChatApplication\bin\Debug\S22.Xmpp.dll
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication_Bkp_4thdec_latest\ChatApplication\bin\Debug\S22.Xmpp.xml
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication_Bkp_4thdec_latest\ChatApplication\obj\Debug\ChatApplication.Login.resources
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication_Bkp_4thdec_latest\ChatApplication\obj\Debug\ChatApplication.Properties.Resources.resources
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication_Bkp_4thdec_latest\ChatApplication\obj\Debug\ChatApplication.XMPPConnection.resources
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication_Bkp_4thdec_latest\ChatApplication\obj\Debug\ChatApplication.csproj.GenerateResource.Cache
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication_Bkp_4thdec_latest\ChatApplication\obj\Debug\ChatApplication.exe
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication_Bkp_4thdec_latest\ChatApplication\obj\Debug\ChatApplication.pdb
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Course Project\ChatApplication_Bkp_4thdec_latest\ChatApplication\obj\Debug\ChatApplication.csprojResolveAssemblyReference.cache
+C:\Users\Wesley\workspace\ACS560_course_project\xmppclient\ChatApplication\bin\Debug\ChatApplication.exe.config
+C:\Users\Wesley\workspace\ACS560_course_project\xmppclient\ChatApplication\obj\Debug\ChatApplication.exe
+C:\Users\Wesley\workspace\ACS560_course_project\xmppclient\ChatApplication\obj\Debug\ChatApplication.pdb
+C:\Users\Wesley\workspace\ACS560_course_project\xmppclient\ChatApplication\bin\Debug\ChatApplication.exe
+C:\Users\Wesley\workspace\ACS560_course_project\xmppclient\ChatApplication\bin\Debug\ChatApplication.pdb
+C:\Users\Wesley\workspace\ACS560_course_project\xmppclient\ChatApplication\bin\Debug\MetroFramework.dll
+C:\Users\Wesley\workspace\ACS560_course_project\xmppclient\ChatApplication\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\Wesley\workspace\ACS560_course_project\xmppclient\ChatApplication\bin\Debug\S22.Xmpp.dll
+C:\Users\Wesley\workspace\ACS560_course_project\xmppclient\ChatApplication\bin\Debug\S22.Xmpp.xml
+C:\Users\Wesley\workspace\ACS560_course_project\xmppclient\ChatApplication\obj\Debug\ChatApplication.csprojResolveAssemblyReference.cache
+C:\Users\Wesley\workspace\ACS560_course_project\xmppclient\ChatApplication\obj\Debug\ChatApplication.Login.resources
+C:\Users\Wesley\workspace\ACS560_course_project\xmppclient\ChatApplication\obj\Debug\ChatApplication.Properties.Resources.resources
+C:\Users\Wesley\workspace\ACS560_course_project\xmppclient\ChatApplication\obj\Debug\ChatApplication.XMPPConnection.resources
+C:\Users\Wesley\workspace\ACS560_course_project\xmppclient\ChatApplication\obj\Debug\ChatApplication.csproj.GenerateResource.Cache
