@@ -2,13 +2,14 @@ package connectionmanager
 
 import (
 	"fmt"
+	"github.com/xweskingx/ACS560_course_project/xmppserver/accountmanager"
+	"github.com/xweskingx/ACS560_course_project/xmppserver/conversationmanager"
+	"github.com/xweskingx/ACS560_course_project/xmppserver/logger"
+	"github.com/xweskingx/ACS560_course_project/xmppserver/xmpp"
 	"os"
 	"strconv"
+	"strings"
 	"sync"
-	"xmppserver/accountmanager"
-	"xmppserver/logger"
-
-	"xmppserver/xmpp"
 )
 
 var manager *ConnectionManager
@@ -20,15 +21,19 @@ type ConnectionManager struct {
 	log         logger.Logger
 }
 
+func getBareJid(jid string) string {
+	return strings.Split(jid, "@")[0]
+}
+
 func (manager ConnectionManager) getConnection(jid string) (conn chan<- interface{}, err error) {
-	if manager.Connections[jid] != nil {
-		conn = manager.Connections[jid]
+	if manager.Connections[getBareJid(jid)] != nil {
+		conn = manager.Connections[getBareJid(jid)]
 	}
 	return
 }
 
 func (manager ConnectionManager) setConnection(jid string, conn chan<- interface{}) {
-	manager.Connections[jid] = conn
+	manager.Connections[getBareJid(jid)] = conn
 }
 
 /* Inject account management into xmpp library */
@@ -36,12 +41,29 @@ func (manager ConnectionManager) setConnection(jid string, conn chan<- interface
 func (manager ConnectionManager) RouteRoutine(bus <-chan xmpp.Message) {
 	var channel chan<- interface{}
 	var ok bool
+	cm := conversationmanager.GetConversationManager()
+	for {
+		message := <-bus
+		manager.lock.Lock()
+		parsed, _ := message.Data.(*xmpp.ClientMessage)
+		cm.AddMessageToSUC(parsed.Body, parsed.From, message.To)
+		if channel, ok = manager.Connections[message.To]; ok {
+			channel <- message.Data
+		}
+
+		manager.lock.Unlock()
+	}
+}
+
+func (manager ConnectionManager) RouteCustomRoutine(bus <-chan xmpp.CustomMessage) {
+	var channel chan<- interface{}
+	var ok bool
 
 	for {
 		message := <-bus
 		manager.lock.Lock()
 
-		if channel, ok = manager.Connections[message.To]; ok {
+		if channel, ok = manager.Connections[getBareJid(message.To)]; ok {
 			channel <- message.Data
 		}
 
@@ -55,8 +77,8 @@ func (manager ConnectionManager) ConnectRoutine(bus <-chan xmpp.Connect) {
 		manager.lock.Lock()
 		manager.log.Info(fmt.Sprintf("%s connected", message.Jid))
 		am := accountmanager.GetAccountManager()
-		am.RegisterUser(message.Jid)
-		manager.Connections[message.Jid] = message.Receiver
+		am.RegisterUser(getBareJid(message.Jid))
+		manager.Connections[getBareJid(message.Jid)] = message.Receiver
 		manager.lock.Unlock()
 		//manager.SendRosterUpdate(message.Jid)
 	}
@@ -69,8 +91,8 @@ func (manager ConnectionManager) DisconnectRoutine(bus <-chan xmpp.Disconnect) {
 		message := <-bus
 		manager.lock.Lock()
 		manager.log.Info(fmt.Sprintf("%s disconnected", message.Jid))
-		am.UnRegisterUser(message.Jid)
-		delete(manager.Connections, message.Jid)
+		am.UnRegisterUser(getBareJid(message.Jid))
+		delete(manager.Connections, getBareJid(message.Jid))
 		manager.lock.Unlock()
 		//manager.SendRosterUpdate(message.Jid)
 	}

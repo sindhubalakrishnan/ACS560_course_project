@@ -1,5 +1,18 @@
 package user
 
+type Presence struct {
+	show   string
+	status string
+}
+
+func (p Presence) GetShow() string {
+	return p.show
+}
+
+func (p Presence) GetStatus() string {
+	return p.status
+}
+
 type User struct {
 	fname      string
 	lname      string
@@ -7,10 +20,27 @@ type User struct {
 	pass       string
 	created_at string
 	id         int
+	presence   Presence
 }
 
-func Init(fname string, lname string, login string, pass string, created_at string, id int) *User {
-	return &User{fname: fname, lname: lname, login: login, pass: pass, created_at: created_at, id: id}
+func InitPresence(show string, status string) Presence {
+	return Presence{show: show, status: status}
+}
+
+func Init(fname string, lname string, login string, pass string, created_at string, id int, p Presence) *User {
+	return &User{fname: fname, lname: lname, login: login, pass: pass, created_at: created_at, id: id, presence: p}
+}
+
+func (u *User) GetID() int {
+	return u.id
+}
+
+func (u *User) SetID(id int) {
+	u.id = id
+}
+
+func (u *User) GetPresence() Presence {
+	return u.presence
 }
 
 func (u *User) GetFirstName() string {
@@ -19,6 +49,10 @@ func (u *User) GetFirstName() string {
 
 func (u *User) GetLastName() string {
 	return u.lname
+}
+
+func (u *User) GetNick() string {
+	return (u.fname + " " + u.lname)
 }
 
 func (u *User) GetLogin() string {
