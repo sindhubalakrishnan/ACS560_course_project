@@ -7,9 +7,9 @@ import (
 	"crypto/tls"
 	"flag"
 	"fmt"
+	"github.com/xweskingx/ACS560_course_project/xmppserver/xmpp"
 	"net"
 	"os"
-	"github.com/xweskingx/ACS560_course_project/xmppserver/xmpp"
 )
 
 /* Inject logging into xmpp library */
@@ -53,15 +53,15 @@ func main() {
 	var l = Logger{info: true, debug: *debugPtr}
 
 	var messagebus = make(chan xmpp.Message)
-  var custommessagebus = make(chan xmpp.CustomMessage)
+	var custommessagebus = make(chan xmpp.CustomMessage)
 	var connectbus = make(chan xmpp.Connect)
 	var disconnectbus = make(chan xmpp.Disconnect)
 
 	//var am = AccountManager{Users: registered, Online: activeUsers, log: l, lock: &sync.Mutex{}}
 	var am = accountmanager.GetAccountManager()
-  am.CreateAccount("atreidesp", "hulud1", "Paul", "Atreides")
+	am.CreateAccount("atreidesp", "hulud1", "Paul", "Atreides")
 	am.CreateAccount("kingw", "1234", "Wesley", "King")
-  am.CreateAccount("sindhu", "1234", "Sindhu", "")
+	am.CreateAccount("sindhu", "1234", "Sindhu", "")
 
 	var cert, _ = tls.LoadX509KeyPair("./cert.pem", "./key.pem")
 	var tlsConfig = tls.Config{
@@ -83,10 +83,10 @@ func main() {
 		ConnectBus: connectbus,
 		Extensions: []xmpp.Extension{
 			&xmpp.DebugExtension{Log: l},
-      &xmpp.NormalMessageExtension{MessageBus: messagebus, Log: l},
-      &xmpp.RosterExtension{Accounts: am, Log: l},
-      &xmpp.PresenceExtension{Accounts: am, CustomMessageBus: custommessagebus, Log: l},
-      &xmpp.SessionExtension{Accounts: am, Log: l},
+			&xmpp.NormalMessageExtension{MessageBus: messagebus, Log: l},
+			&xmpp.RosterExtension{Accounts: am, Log: l},
+			&xmpp.PresenceExtension{Accounts: am, CustomMessageBus: custommessagebus, Log: l},
+			&xmpp.SessionExtension{Accounts: am, Log: l},
 		},
 		DisconnectBus: disconnectbus,
 		Domain:        "example.com",
@@ -106,7 +106,7 @@ func main() {
 	defer listener.Close()
 
 	go cm.RouteRoutine(messagebus)
-  go cm.RouteCustomRoutine(custommessagebus)
+	go cm.RouteCustomRoutine(custommessagebus)
 	go cm.ConnectRoutine(connectbus)
 	go cm.DisconnectRoutine(disconnectbus)
 

@@ -2,14 +2,14 @@ package connectionmanager
 
 import (
 	"fmt"
-	"os"
-	"strconv"
-	"sync"
-  "strings"
 	"github.com/xweskingx/ACS560_course_project/xmppserver/accountmanager"
 	"github.com/xweskingx/ACS560_course_project/xmppserver/conversationmanager"
 	"github.com/xweskingx/ACS560_course_project/xmppserver/logger"
 	"github.com/xweskingx/ACS560_course_project/xmppserver/xmpp"
+	"os"
+	"strconv"
+	"strings"
+	"sync"
 )
 
 var manager *ConnectionManager
@@ -22,7 +22,7 @@ type ConnectionManager struct {
 }
 
 func getBareJid(jid string) string {
-  return strings.Split(jid, "@")[0]
+	return strings.Split(jid, "@")[0]
 }
 
 func (manager ConnectionManager) getConnection(jid string) (conn chan<- interface{}, err error) {
@@ -41,12 +41,12 @@ func (manager ConnectionManager) setConnection(jid string, conn chan<- interface
 func (manager ConnectionManager) RouteRoutine(bus <-chan xmpp.Message) {
 	var channel chan<- interface{}
 	var ok bool
-  cm := conversationmanager.GetConversationManager()
+	cm := conversationmanager.GetConversationManager()
 	for {
 		message := <-bus
 		manager.lock.Lock()
-    parsed,_  := message.Data.(*xmpp.ClientMessage)
-    cm.AddMessageToSUC(parsed.Body, parsed.From, message.To)
+		parsed, _ := message.Data.(*xmpp.ClientMessage)
+		cm.AddMessageToSUC(parsed.Body, parsed.From, message.To)
 		if channel, ok = manager.Connections[message.To]; ok {
 			channel <- message.Data
 		}

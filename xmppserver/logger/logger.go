@@ -8,7 +8,7 @@ import (
 // LogLevel 0 = All, 1 = Info and Error, 2 = Error, 3 = No logging
 type Logger struct {
 	LogLevel int
-  TAG string
+	TAG      string
 }
 
 var (
@@ -33,18 +33,18 @@ func (l Logger) Init(handle io.Writer) {
 
 func (l Logger) Info(msg string) {
 	if l.LogLevel <= 1 {
-		InfoLogger.Printf("[" + l.TAG + "] INFO: %s\n", msg)
+		InfoLogger.Printf("["+l.TAG+"] INFO: %s\n", msg)
 	}
 }
 
 func (l Logger) Debug(msg string) {
 	if l.LogLevel <= 0 {
-		DebugLogger.Printf("[" + l.TAG + "] DEBUG: %s\n", msg)
+		DebugLogger.Printf("["+l.TAG+"] DEBUG: %s\n", msg)
 	}
 }
 
 func (l Logger) Error(msg string) {
 	if l.LogLevel <= 2 {
-		ErrorLogger.Printf("[" + l.TAG + "] ERROR: %s\n", msg)
+		ErrorLogger.Printf("["+l.TAG+"] ERROR: %s\n", msg)
 	}
 }

@@ -6,11 +6,11 @@ type Presence struct {
 }
 
 func (p Presence) GetShow() string {
-  return p.show
+	return p.show
 }
 
 func (p Presence) GetStatus() string {
-  return p.status
+	return p.status
 }
 
 type User struct {
@@ -24,22 +24,20 @@ type User struct {
 }
 
 func InitPresence(show string, status string) Presence {
-  return Presence{show: show, status: status}
+	return Presence{show: show, status: status}
 }
-
 
 func Init(fname string, lname string, login string, pass string, created_at string, id int, p Presence) *User {
 	return &User{fname: fname, lname: lname, login: login, pass: pass, created_at: created_at, id: id, presence: p}
 }
 
 func (u *User) GetID() int {
-  return u.id
+	return u.id
 }
 
 func (u *User) SetID(id int) {
-  u.id = id
+	u.id = id
 }
-
 
 func (u *User) GetPresence() Presence {
 	return u.presence
@@ -54,7 +52,7 @@ func (u *User) GetLastName() string {
 }
 
 func (u *User) GetNick() string {
-  return (u.fname + " " + u.lname)
+	return (u.fname + " " + u.lname)
 }
 
 func (u *User) GetLogin() string {

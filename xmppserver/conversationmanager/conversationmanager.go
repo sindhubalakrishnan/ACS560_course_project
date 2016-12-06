@@ -2,12 +2,12 @@ package conversationmanager
 
 import (
 	"fmt"
-	"os"
-  "strings"
-	"sync"
 	"github.com/xweskingx/ACS560_course_project/xmppserver/dataaccess"
 	"github.com/xweskingx/ACS560_course_project/xmppserver/logger"
 	"github.com/xweskingx/ACS560_course_project/xmppserver/xmppmessage"
+	"os"
+	"strings"
+	"sync"
 )
 
 type ConversationManager struct {
@@ -32,10 +32,10 @@ func (man ConversationManager) CreateSingleUserChat(jid1 string, jid2 string, su
 }
 
 func Min(x, y int) int {
-    if x < y {
-        return x
-    }
-    return y
+	if x < y {
+		return x
+	}
+	return y
 }
 
 func (man ConversationManager) AddMessageToSUC(body string, from string, to string) {
@@ -47,10 +47,10 @@ func (man ConversationManager) AddMessageToSUC(body string, from string, to stri
 		manager.log.Debug(fmt.Sprintf("Conversation not found for users %s and %s, create conversation", getBareJid(from), getBareJid(to)))
 		c, csuccess = manager.da.CreateConversation(body[:Min(len(body), 24)], "SUC", getBareJid(from), getBareJid(to))
 	}
-  u, usuccess := manager.da.LookupUserByLogin(getBareJid(from))
+	u, usuccess := manager.da.LookupUserByLogin(getBareJid(from))
 	if csuccess && usuccess {
 		m := xmppmessage.Init("", body, u, c, -1)
-    _, success := manager.da.AddMessageToConversation(m, c)
+		_, success := manager.da.AddMessageToConversation(m, c)
 		if success {
 			manager.log.Debug(fmt.Sprintf("Successfully added message to conversation for users %s and %s", from, to))
 		} else {
@@ -80,5 +80,5 @@ func (man ConversationManager) checkErr(msg string, err error) {
 }
 
 func getBareJid(jid string) string {
-  return strings.Split(jid, "@")[0]
+	return strings.Split(jid, "@")[0]
 }
