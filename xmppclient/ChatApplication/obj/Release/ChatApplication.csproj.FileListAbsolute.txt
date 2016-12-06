@@ -40,3 +40,17 @@ C:\Users\Wesley\workspace\ACS560_course_project\xmppclient\ChatApplication\obj\R
 C:\Users\Wesley\workspace\ACS560_course_project\xmppclient\ChatApplication\obj\Release\ChatApplication.csproj.GenerateResource.Cache
 C:\Users\Wesley\workspace\ACS560_course_project\xmppclient\ChatApplication\obj\Release\ChatApplication.exe
 C:\Users\Wesley\workspace\ACS560_course_project\xmppclient\ChatApplication\obj\Release\ChatApplication.pdb
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Project Demo\ACS560_course_project\xmppclient\ChatApplication\bin\Release\ChatApplication.exe.config
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Project Demo\ACS560_course_project\xmppclient\ChatApplication\obj\Release\ChatApplication.exe
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Project Demo\ACS560_course_project\xmppclient\ChatApplication\obj\Release\ChatApplication.pdb
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Project Demo\ACS560_course_project\xmppclient\ChatApplication\bin\Release\ChatApplication.exe
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Project Demo\ACS560_course_project\xmppclient\ChatApplication\bin\Release\ChatApplication.pdb
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Project Demo\ACS560_course_project\xmppclient\ChatApplication\bin\Release\MetroFramework.dll
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Project Demo\ACS560_course_project\xmppclient\ChatApplication\bin\Release\MetroFramework.Fonts.dll
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Project Demo\ACS560_course_project\xmppclient\ChatApplication\bin\Release\S22.Xmpp.dll
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Project Demo\ACS560_course_project\xmppclient\ChatApplication\bin\Release\S22.Xmpp.xml
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Project Demo\ACS560_course_project\xmppclient\ChatApplication\obj\Release\ChatApplication.csprojResolveAssemblyReference.cache
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Project Demo\ACS560_course_project\xmppclient\ChatApplication\obj\Release\ChatApplication.Login.resources
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Project Demo\ACS560_course_project\xmppclient\ChatApplication\obj\Release\ChatApplication.Properties.Resources.resources
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Project Demo\ACS560_course_project\xmppclient\ChatApplication\obj\Release\ChatApplication.XMPPConnection.resources
+C:\Users\sindh\Documents\Sindhu\Software Engineering\Project Demo\ACS560_course_project\xmppclient\ChatApplication\obj\Release\ChatApplication.csproj.GenerateResource.Cache

@@ -243,6 +243,7 @@
             // sendMsgtbx
             // 
             this.sendMsgtbx.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(249)))), ((int)(((byte)(254)))));
+            this.sendMsgtbx.Dock = System.Windows.Forms.DockStyle.Fill;
             this.sendMsgtbx.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sendMsgtbx.Location = new System.Drawing.Point(3, 3);
             this.sendMsgtbx.Name = "sendMsgtbx";

@@ -2,7 +2,6 @@
 using System.Drawing;
 using System.Windows.Forms;
 using S22.Xmpp;
-using S22.Xmpp.Client;
 using S22.Xmpp.Im;
 using System.Net.Security;
 using System.Linq;
@@ -11,15 +10,15 @@ namespace ChatApplication
 {
     public partial class XMPPConnection : Form
     {
-        public XmppClient client;
         public XmppIm im;
-        public string sendTo, receipientName,sentbyJID;
+        public string sendTo, receipientName, sentbyJID;
         public TabPage userTabPage;
 
         // True if the instance -im has been disposed of.
         private bool disposed;
 
         delegate void SetConverstionLog(string text, string sentby, string sentto);
+
         public delegate void SetTabCntrls(string receipientName);
 
         public XmppIm Im
@@ -113,7 +112,6 @@ namespace ChatApplication
             }
         }
 
-
         public RemoteCertificateValidationCallback Validate
         {
             get
@@ -160,7 +158,6 @@ namespace ChatApplication
 
         private void XMPPConnection_Load(object sender, EventArgs e)
         {
-            sendMsgtbx.Width = tableLayoutPanel1.Width;
             Login lgn = new Login(this);
             lgn.Show();
             this.Hide();
@@ -238,6 +235,7 @@ namespace ChatApplication
                 button.ContextMenuStrip = contextMenuStrip;
                 location_ptr = location_ptr + 1;
             }
+            //sendMsgtbx.Enabled = false;
         }
 
         private void refreshContactsbtn_Click(object sender, EventArgs e)
@@ -290,26 +288,35 @@ namespace ChatApplication
             }
         }
 
+        private void isNullcheck(string sendTo)
+        {
+            if (String.IsNullOrEmpty(sendTo))
+            {
+                sendTo = sentbyJID;
+            }
+        }
+
+        private void sendMessageWrapper()
+        {
+            isNullcheck(sendTo);
+            sendMessage(sendTo);
+        }
+
         private void sendMsgtbx_KeyUp(object sender,KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                if (sendTo == null)
-                {
-                    sendTo = sentbyJID;
-                }
-                Jid tojid = new Jid(sendTo);
-                sendMessage(sendTo);
+                sendMessageWrapper();
             }
         }
 
         private void sendMessage(string sentto)
         {
            string message = sendMsgtbx.Text;
-           if(!sentto.StartsWith(tabControl.SelectedTab.Text, StringComparison.OrdinalIgnoreCase))
+            isNullcheck(sentto);
+            if (!sentto.StartsWith(tabControl.SelectedTab.Text, StringComparison.OrdinalIgnoreCase))
             {
-                string hostsuffix = sentto.Split('@')[1];
-                sentto = tabControl.SelectedTab.Text +'@' + hostsuffix;
+                sentto = tabControl.SelectedTab.Text;
             }
 
             AssertValid();
@@ -322,13 +329,7 @@ namespace ChatApplication
 
         private void sndMsgbtn_Click(object sender, EventArgs e)
         {
-            if(sendTo == null)
-            {
-                sendTo = sentbyJID;
-            }
-            Jid tojid = new Jid(sendTo);
-
-            sendMessage(sendTo);
+            sendMessageWrapper();
         }
 
         //On receiving a new message from another client
@@ -355,11 +356,10 @@ namespace ChatApplication
 
             else
             {
-                string title = sentto;
                 int tabIndex = tabControl.TabPages.IndexOf(tabControl.SelectedTab);
-                RichTextBox tmpbox = (RichTextBox)tabControl.TabPages[tabIndex].Controls[0];
-                tmpbox.Text += DateTime.Now + " " + sentby + ":\n";
-                tmpbox.Text += msg + "\n";
+                convHistorytxb = (RichTextBox)tabControl.TabPages[tabIndex].Controls[0];
+                convHistorytxb.Text += DateTime.Now + " " + sentby + ":\n";
+                convHistorytxb.Text += msg + "\n";
             }
         }
 
@@ -379,6 +379,7 @@ namespace ChatApplication
 
         private void AddContactbtn_Click(object sender, EventArgs e)
         {
+            //Roster.AddContact(jid, name, groups);
             ClearControls();
         }
 
@@ -391,6 +392,7 @@ namespace ChatApplication
         {
             Searchtxb.Text = string.Empty;
             Groupscombobox.Items.Clear();
+            Groupscombobox.SelectedText = "";
         }
 
         private void SearchContact(string s_contact)
@@ -435,11 +437,11 @@ namespace ChatApplication
             {
                 grpconvTitle += "," + addUsertogrpconv;
                 string Title = string.Empty;
-                    if(grpconvTitle.StartsWith("Group Chat", StringComparison.OrdinalIgnoreCase))
+                if(grpconvTitle.StartsWith("Group Chat", StringComparison.OrdinalIgnoreCase))
                 {
                     Title += grpconvTitle;
                 }
-                    else
+                else
                 {
                     Title = "Group Chat - " + grpconvTitle;
                 }
@@ -458,7 +460,8 @@ namespace ChatApplication
                 throw new InvalidOperationException("Not authenticated with XMPP server.");
         }
 
-        private string GetBareJid(Jid jid) {
+        private string GetBareJid(Jid jid)
+        {
             return jid.ToString().Split('@')[0];
         }
     }
