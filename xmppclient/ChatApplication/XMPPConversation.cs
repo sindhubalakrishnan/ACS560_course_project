@@ -11,6 +11,7 @@ namespace ChatApplication
         public XMPPConversation(XMPPConnection xmppconnection)
         {
             this.xmppconnection = xmppconnection;
+            
         }
     }
 }
