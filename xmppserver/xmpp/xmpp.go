@@ -9,6 +9,7 @@ package xmpp
 import (
 	"crypto/tls"
 	"fmt"
+	"github.com/xweskingx/ACS560_course_project/xmppserver/user"
 	"net"
 )
 
@@ -24,10 +25,17 @@ type Client struct {
 // AccountManager performs roster management and authentication
 type AccountManager interface {
 	Authenticate(username, password string) (success bool, err error)
-	CreateAccount(username, password string) (success bool, err error)
+	CreateAccount(fname, lname, username, password string) (success bool, err error)
 	OnlineRoster(jid string) (online []string, err error)
-	SetUserPresence(jid, presence string) (success bool, err error)
-	GetUserPresence(jid string) string
+	GetAllUsers(jid string) (users []string, err error)
+	SetUserPresence(jid string, show string, status string) (success bool, err error)
+	GetUserPresence(jid string) user.Presence
+	GetRosterVersion() int
+	GetUserNick(jid string) (nick string, success bool)
+	GetUserSubscriptions(jid string) []string
+	GetSubscriptionsToUser(jid string) []string
+	Subscribe(from string, to string)
+	Unsubscribe(from string, to string)
 }
 
 // Logging interface for library messages
@@ -71,6 +79,11 @@ type Server struct {
 type Message struct {
 	To   string
 	Data interface{}
+}
+
+type CustomMessage struct {
+	To   string
+	Data string
 }
 
 // Connect holds a channel where the server can send messages to the specific Jid

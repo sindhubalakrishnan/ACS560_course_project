@@ -1,15 +1,15 @@
 package main
 
 import (
-	"xmppserver/accountmanager"
-	"xmppserver/connectionmanager"
+	"github.com/xweskingx/ACS560_course_project/xmppserver/accountmanager"
+	"github.com/xweskingx/ACS560_course_project/xmppserver/connectionmanager"
 
 	"crypto/tls"
 	"flag"
 	"fmt"
+	"github.com/xweskingx/ACS560_course_project/xmppserver/xmpp"
 	"net"
 	"os"
-	"xmppserver/xmpp"
 )
 
 /* Inject logging into xmpp library */
@@ -53,13 +53,15 @@ func main() {
 	var l = Logger{info: true, debug: *debugPtr}
 
 	var messagebus = make(chan xmpp.Message)
+	var custommessagebus = make(chan xmpp.CustomMessage)
 	var connectbus = make(chan xmpp.Connect)
 	var disconnectbus = make(chan xmpp.Disconnect)
 
 	//var am = AccountManager{Users: registered, Online: activeUsers, log: l, lock: &sync.Mutex{}}
 	var am = accountmanager.GetAccountManager()
-	am.CreateAccount("atreidesp", "hulud1")
-	am.CreateAccount("kingw", "1234")
+	am.CreateAccount("atreidesp", "hulud1", "Paul", "Atreides")
+	am.CreateAccount("kingw", "1234", "Wesley", "King")
+	am.CreateAccount("sindhu", "1234", "Sindhu", "")
 
 	var cert, _ = tls.LoadX509KeyPair("./cert.pem", "./key.pem")
 	var tlsConfig = tls.Config{
@@ -73,15 +75,18 @@ func main() {
 			tls.TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA},
 	}
 
+	cm := connectionmanager.GetConnectionManager()
+
 	xmppServer := &xmpp.Server{
 		Log:        l,
 		Accounts:   am,
 		ConnectBus: connectbus,
 		Extensions: []xmpp.Extension{
 			&xmpp.DebugExtension{Log: l},
-			&xmpp.NormalMessageExtension{MessageBus: messagebus},
-			&xmpp.RosterExtension{Accounts: am},
-			&xmpp.PresenceExtension{Accounts: am, MessageBus: messagebus},
+			&xmpp.NormalMessageExtension{MessageBus: messagebus, Log: l},
+			&xmpp.RosterExtension{Accounts: am, Log: l},
+			&xmpp.PresenceExtension{Accounts: am, CustomMessageBus: custommessagebus, Log: l},
+			&xmpp.SessionExtension{Accounts: am, Log: l},
 		},
 		DisconnectBus: disconnectbus,
 		Domain:        "example.com",
@@ -100,8 +105,8 @@ func main() {
 	}
 	defer listener.Close()
 
-	cm := connectionmanager.GetConnectionManager()
 	go cm.RouteRoutine(messagebus)
+	go cm.RouteCustomRoutine(custommessagebus)
 	go cm.ConnectRoutine(connectbus)
 	go cm.DisconnectRoutine(disconnectbus)
 
